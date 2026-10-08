@@ -1,0 +1,255 @@
+/* Behavioral Telemetry Layout */
+.telemetry-dashboard-grid {
+  display: grid;
+  grid-template-columns: 2fr 1fr;
+  gap: 1.5rem;
+  margin-bottom: 1.5rem;
+}
+
+@media (max-width: 1100px) {
+  .telemetry-dashboard-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+.telemetry-card {
+  background: var(--bg-card);
+  backdrop-filter: var(--glass-blur);
+  border: 1px solid var(--border-glass);
+  border-radius: var(--radius-lg);
+  padding: 1.5rem;
+  box-shadow: var(--shadow-subtle);
+  position: relative;
+}
+
+.telemetry-card-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 1.25rem;
+  border-bottom: 1px solid var(--border-subtle);
+  padding-bottom: 0.85rem;
+}
+
+.telemetry-card-title {
+  display: flex;
+  align-items: center;
+  gap: 0.6rem;
+  font-size: 1rem;
+  font-weight: 700;
+  color: var(--text-primary);
+}
+
+.telemetry-badge-info {
+  font-family: var(--font-mono);
+  font-size: 0.72rem;
+  padding: 0.25rem 0.6rem;
+  background: rgba(255, 255, 255, 0.05);
+  border-radius: var(--radius-full);
+  color: var(--text-muted);
+}
+
+/* Gantt Chart Container */
+.gantt-chart-container {
+  display: flex;
+  flex-direction: column;
+  gap: 1.25rem;
+  min-height: 240px;
+}
+
+.gantt-track-row {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
+.gantt-subject-label {
+  width: 90px;
+  font-family: var(--font-mono);
+  font-size: 0.78rem;
+  font-weight: 700;
+  color: var(--neon-cyan);
+  display: flex;
+  align-items: center;
+  gap: 0.4rem;
+}
+
+.gantt-bar-track {
+  flex: 1;
+  height: 28px;
+  background: rgba(255, 255, 255, 0.04);
+  border-radius: 6px;
+  display: flex;
+  overflow: hidden;
+  position: relative;
+  border: 1px solid var(--border-subtle);
+}
+
+.gantt-block {
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 0.7rem;
+  font-weight: 600;
+  color: #06080d;
+  transition: all 0.3s;
+  cursor: pointer;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  padding: 0 0.4rem;
+}
+
+.gantt-block:hover {
+  filter: brightness(1.2);
+}
+
+/* Activity Breakdown List & Visual Bars */
+.activity-breakdown-list {
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+}
+
+.activity-bar-row {
+  display: flex;
+  flex-direction: column;
+  gap: 0.3rem;
+}
+
+.activity-bar-meta {
+  display: flex;
+  justify-content: space-between;
+  font-size: 0.78rem;
+  color: var(--text-secondary);
+}
+
+.activity-bar-outer {
+  width: 100%;
+  height: 7px;
+  background: rgba(255, 255, 255, 0.06);
+  border-radius: 4px;
+  overflow: hidden;
+}
+
+.activity-bar-inner {
+  height: 100%;
+  border-radius: 4px;
+  transition: width 0.4s var(--ease-spring);
+}
+
+/* Focus Gauge Card */
+.focus-score-wrapper {
+  display: flex;
+  align-items: center;
+  gap: 1.5rem;
+  padding: 0.75rem 0;
+}
+
+.circular-gauge-box {
+  width: 110px;
+  height: 110px;
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.circular-gauge-box svg {
+  transform: rotate(-90deg);
+  width: 100%;
+  height: 100%;
+}
+
+.gauge-circle-bg {
+  fill: none;
+  stroke: rgba(255, 255, 255, 0.08);
+  stroke-width: 8;
+}
+
+.gauge-circle-val {
+  fill: none;
+  stroke: var(--status-productive);
+  stroke-width: 8;
+  stroke-linecap: round;
+  stroke-dasharray: 283;
+  stroke-dashoffset: 60;
+  transition: stroke-dashoffset 0.8s var(--ease-spring);
+}
+
+.gauge-score-text {
+  position: absolute;
+  font-family: var(--font-mono);
+  font-size: 1.4rem;
+  font-weight: 700;
+  color: var(--text-primary);
+}
+
+.focus-meta-details {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  font-size: 0.82rem;
+  color: var(--text-secondary);
+}
+
+/* Event Audit Log Stream */
+.event-audit-stream {
+  display: flex;
+  flex-direction: column;
+  gap: 0.65rem;
+  max-height: 380px;
+  overflow-y: auto;
+}
+
+.audit-event-item {
+  display: flex;
+  align-items: flex-start;
+  gap: 0.85rem;
+  padding: 0.75rem 1rem;
+  border-radius: var(--radius-sm);
+  background: rgba(255, 255, 255, 0.02);
+  border-left: 3px solid var(--neon-cyan);
+  transition: background 0.2s;
+}
+
+.audit-event-item:hover {
+  background: rgba(255, 255, 255, 0.04);
+}
+
+.audit-event-item.critical {
+  border-left-color: var(--status-critical);
+  background: rgba(255, 51, 102, 0.05);
+}
+
+.audit-event-item.warning {
+  border-left-color: var(--status-warning);
+}
+
+.audit-event-item.success {
+  border-left-color: var(--status-productive);
+}
+
+.audit-time {
+  font-family: var(--font-mono);
+  font-size: 0.7rem;
+  color: var(--text-muted);
+  white-space: nowrap;
+}
+
+.audit-content {
+  flex: 1;
+}
+
+.audit-title {
+  font-size: 0.82rem;
+  font-weight: 600;
+  color: var(--text-primary);
+  margin-bottom: 0.2rem;
+}
+
+.audit-desc {
+  font-size: 0.75rem;
+  color: var(--text-muted);
+}
