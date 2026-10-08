@@ -1,0 +1,238 @@
+/* Diagnostic Studio Layout */
+.diagnostic-layout-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1.5rem;
+  align-items: start;
+}
+
+@media (max-width: 1024px) {
+  .diagnostic-layout-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+.diagnostic-card {
+  background: var(--bg-card);
+  backdrop-filter: var(--glass-blur);
+  border: 1px solid var(--border-glass);
+  border-radius: var(--radius-lg);
+  padding: 1.5rem;
+  box-shadow: var(--shadow-subtle);
+}
+
+/* Upload Dropzone */
+.dropzone-container {
+  border: 2px dashed rgba(0, 242, 254, 0.35);
+  border-radius: var(--radius-md);
+  padding: 2.5rem 1.5rem;
+  text-align: center;
+  background: rgba(0, 242, 254, 0.02);
+  transition: all 0.3s var(--ease-spring);
+  cursor: pointer;
+  margin-bottom: 1.5rem;
+  position: relative;
+}
+
+.dropzone-container:hover, .dropzone-container.dragover {
+  border-color: var(--neon-cyan);
+  background: rgba(0, 242, 254, 0.06);
+  transform: scale(0.99);
+}
+
+.dropzone-icon {
+  width: 52px;
+  height: 52px;
+  margin: 0 auto 1rem auto;
+  border-radius: 50%;
+  background: rgba(0, 242, 254, 0.1);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--neon-cyan);
+}
+
+.dropzone-title {
+  font-size: 1rem;
+  font-weight: 600;
+  color: var(--text-primary);
+  margin-bottom: 0.35rem;
+}
+
+.dropzone-sub {
+  font-size: 0.8rem;
+  color: var(--text-muted);
+}
+
+/* Sample Quick-Test Presets */
+.preset-sample-selector {
+  margin-top: 1rem;
+}
+
+.preset-title {
+  font-size: 0.75rem;
+  text-transform: uppercase;
+  color: var(--text-muted);
+  font-family: var(--font-mono);
+  margin-bottom: 0.6rem;
+}
+
+.preset-chips {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+}
+
+.preset-chip-btn {
+  padding: 0.35rem 0.75rem;
+  background: rgba(255, 255, 255, 0.05);
+  border: 1px solid var(--border-subtle);
+  border-radius: var(--radius-full);
+  font-size: 0.75rem;
+  color: var(--text-secondary);
+  transition: all 0.2s;
+}
+
+.preset-chip-btn:hover {
+  background: rgba(0, 242, 254, 0.15);
+  border-color: var(--neon-cyan);
+  color: var(--text-primary);
+}
+
+/* Dual Inspection Visualizer (Crop vs Heatmap) */
+.dual-visualizer-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1rem;
+  margin-top: 1.25rem;
+}
+
+.visual-box {
+  background: rgba(0, 0, 0, 0.4);
+  border: 1px solid var(--border-subtle);
+  border-radius: var(--radius-sm);
+  overflow: hidden;
+}
+
+.visual-box-header {
+  padding: 0.45rem 0.75rem;
+  background: rgba(255, 255, 255, 0.03);
+  font-size: 0.72rem;
+  font-family: var(--font-mono);
+  color: var(--text-muted);
+  border-bottom: 1px solid var(--border-subtle);
+}
+
+.visual-img-wrap {
+  aspect-ratio: 1 / 1;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: #000000;
+}
+
+.visual-img-wrap img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+/* Diagnostic Results Panel */
+.diag-results-card {
+  display: flex;
+  flex-direction: column;
+  gap: 1.25rem;
+}
+
+.diag-top1-banner {
+  background: linear-gradient(135deg, rgba(0, 242, 254, 0.12), rgba(184, 0, 255, 0.12));
+  border: 1px solid var(--border-glass);
+  border-radius: var(--radius-md);
+  padding: 1.25rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.top1-action-name {
+  font-size: 1.5rem;
+  font-weight: 700;
+  text-transform: capitalize;
+  background: var(--grad-cyber);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.top1-conf-score {
+  font-size: 1.8rem;
+  font-weight: 700;
+  font-family: var(--font-mono);
+  color: var(--neon-cyan);
+}
+
+/* Top-5 Probability Bars */
+.prob-spectrum-list {
+  display: flex;
+  flex-direction: column;
+  gap: 0.85rem;
+}
+
+.prob-row {
+  display: flex;
+  flex-direction: column;
+  gap: 0.35rem;
+}
+
+.prob-meta-line {
+  display: flex;
+  justify-content: space-between;
+  font-size: 0.82rem;
+  font-weight: 600;
+  text-transform: capitalize;
+}
+
+.prob-track-outer {
+  width: 100%;
+  height: 8px;
+  background: rgba(255, 255, 255, 0.08);
+  border-radius: 4px;
+  overflow: hidden;
+}
+
+.prob-track-fill {
+  height: 100%;
+  background: var(--grad-cyan-blue);
+  border-radius: 4px;
+  transition: width 0.6s var(--ease-spring);
+}
+
+/* Posture Explanation Callout */
+.posture-cues-callout {
+  background: rgba(255, 255, 255, 0.03);
+  border: 1px solid var(--border-subtle);
+  border-radius: var(--radius-sm);
+  padding: 1rem;
+}
+
+.posture-cues-title {
+  font-size: 0.78rem;
+  font-family: var(--font-mono);
+  color: var(--neon-cyan);
+  text-transform: uppercase;
+  margin-bottom: 0.5rem;
+}
+
+.cues-tags-list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.4rem;
+}
+
+.cue-tag {
+  font-size: 0.75rem;
+  padding: 0.25rem 0.6rem;
+  border-radius: 4px;
+  background: rgba(255, 255, 255, 0.05);
+  color: var(--text-secondary);
+}
