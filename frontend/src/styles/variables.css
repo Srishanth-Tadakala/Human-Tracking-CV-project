@@ -1,0 +1,59 @@
+:root {
+  /* Surface & Background Palettes */
+  --bg-deep: #06080d;
+  --bg-dark: #0b0f19;
+  --bg-surface: #111726;
+  --bg-surface-elevated: #161e31;
+  --bg-card: rgba(17, 23, 38, 0.72);
+  --bg-card-hover: rgba(23, 32, 53, 0.85);
+  --bg-card-active: rgba(28, 40, 66, 0.9);
+
+  /* Glassmorphism & Borders */
+  --border-subtle: rgba(255, 255, 255, 0.06);
+  --border-glass: rgba(255, 255, 255, 0.12);
+  --border-glow-cyan: rgba(0, 242, 254, 0.35);
+  --border-glow-purple: rgba(184, 0, 255, 0.35);
+  --glass-blur: blur(18px);
+
+  /* Primary Brand Neon Accents */
+  --neon-cyan: #00f2fe;
+  --neon-blue: #4facfe;
+  --neon-purple: #7928ca;
+  --neon-violet: #b800ff;
+  --neon-pink: #f72585;
+
+  /* Semantic Status Colors */
+  --status-productive: #00f5a0;
+  --status-wellness: #14b8a6;
+  --status-info: #38bdf8;
+  --status-warning: #f59e0b;
+  --status-distraction: #fb923c;
+  --status-critical: #ff3366;
+
+  /* Text Colors */
+  --text-primary: #f8fafc;
+  --text-secondary: #94a3b8;
+  --text-muted: #64748b;
+  --text-dim: #475569;
+
+  /* Typography */
+  --font-sans: 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+  --font-mono: 'JetBrains Mono', 'Fira Code', monospace;
+
+  /* Gradients */
+  --grad-cyan-blue: linear-gradient(135deg, #00f2fe 0%, #4facfe 100%);
+  --grad-purple-violet: linear-gradient(135deg, #7928ca 0%, #b800ff 100%);
+  --grad-sunset: linear-gradient(135deg, #f72585 0%, #7209b7 100%);
+  --grad-cyber: linear-gradient(135deg, #00f2fe 0%, #b800ff 100%);
+  --grad-card-glow: radial-gradient(circle at 50% 0%, rgba(0, 242, 254, 0.12) 0%, transparent 70%);
+
+  /* Transitions & Shadows */
+  --ease-spring: cubic-bezier(0.16, 1, 0.3, 1);
+  --shadow-subtle: 0 4px 20px rgba(0, 0, 0, 0.4);
+  --shadow-glow-cyan: 0 0 25px rgba(0, 242, 254, 0.25);
+  --shadow-glow-critical: 0 0 25px rgba(255, 51, 102, 0.35);
+  --radius-sm: 8px;
+  --radius-md: 14px;
+  --radius-lg: 20px;
+  --radius-full: 9999px;
+}
